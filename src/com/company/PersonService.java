@@ -12,6 +12,11 @@ public class PersonService {
     private CompanyService companyService;
     private AddressService addressService;
 
+    public PersonService(CompanyService companyService, AddressService addressService) {
+        this.companyService = companyService;
+        this.addressService = addressService;
+    }
+
     public Person createPersonFromUserInput() {
         print(NAME);
         String name = scanner.nextLine();
@@ -19,8 +24,6 @@ public class PersonService {
         String secondName = scanner.nextLine();
         return new Person(name, secondName, companyService.createCompanyFromUserInput(), addressService.createAddressFromUserInput());
     }
-
-
 
     private void print(String msg) {
         System.out.println(msg);

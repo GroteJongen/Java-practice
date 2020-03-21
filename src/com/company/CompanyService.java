@@ -9,6 +9,10 @@ public class CompanyService {
     private static Scanner scanner = new Scanner(System.in);
     private AddressService addressService;
 
+    public CompanyService(AddressService addressService) {
+        this.addressService = addressService;
+    }
+
     public Company createCompanyFromUserInput() {
         print(COMPANY_NAME_INPUT_MSG);
         String companyNaam = scanner.nextLine();
